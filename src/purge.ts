@@ -14,7 +14,7 @@ const purge = async (
       },
     }
   );
-  if (response.status !== 204) {
+  if (!response.ok) {
     throw new Error(`Purging failed with the status code ${response.status}.`);
   }
   info("Cache successfully purged.");
